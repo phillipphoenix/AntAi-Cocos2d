@@ -63,7 +63,11 @@
     <ClCompile Include="..\Classes\MenuScene.cpp">
       <Filter>src\Scenes</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="..\Classes\GameMap.cpp">
+=======
+    <ClCompile Include="..\Classes\CreatureMap.cpp">
+>>>>>>> 244e1f7bcfe33be093bc32eda76b0f429118ff7d
       <Filter>src\Entities</Filter>
     </ClCompile>
   </ItemGroup>
@@ -116,10 +120,14 @@
     <ClInclude Include="..\Classes\MenuScene.h">
       <Filter>src\Scenes</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="..\Classes\GameMap.h">
       <Filter>src\Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\TileType.h">
+=======
+    <ClInclude Include="..\Classes\CreatureMap.h">
+>>>>>>> 244e1f7bcfe33be093bc32eda76b0f429118ff7d
       <Filter>src\Entities</Filter>
     </ClInclude>
   </ItemGroup>

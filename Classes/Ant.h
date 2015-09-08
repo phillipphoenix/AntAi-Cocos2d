@@ -10,8 +10,9 @@
 
 #include "Creature.h"
 
-
 class Ant: public Creature {
+public:
+	Ant(int teamId, cocos2d::Color3B teamColour, Agent* agent);
 };
 
 #endif //_ANT_H

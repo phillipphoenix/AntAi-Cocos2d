@@ -10,9 +10,9 @@
 
 #include "Item.h"
 
-
 class Food: public Item {
 public:
+	Food();
 	std::string getType();
 };
 

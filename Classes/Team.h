@@ -8,8 +8,12 @@
 #ifndef _TEAM_H
 #define _TEAM_H
 
+class Creature;
+
 #include "cocos2d.h"
+#include <vector>
 #include <string>
+#include "SpawnPoint.h"
 
 class Team {
 public:
@@ -22,6 +26,9 @@ private:
     std::string creatureType;
     std::string agentType;
     cocos2d::Color3B colour;
+	std::vector<Creature> creatures;
+	std::vector<SpawnPoint> spawnPoints;
+
 };
 
 #endif //_TEAM_H

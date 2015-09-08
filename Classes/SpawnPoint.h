@@ -11,6 +11,8 @@
 #include "cocos2d.h"
 #include "GameObject.h"
 #include "CreatureFactory.h"
+#include "Item.h"
+#include <vector>
 
 
 class SpawnPoint: public GameObject {
@@ -21,6 +23,7 @@ private:
     int hp;
     cocos2d::Point pos;
 	CreatureFactory factory;
+	std::vector<Item> items;
 };
 
 #endif //_SPAWNPOINT_H

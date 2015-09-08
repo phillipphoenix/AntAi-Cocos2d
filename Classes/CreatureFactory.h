@@ -8,17 +8,18 @@
 #ifndef _CREATUREFACTORY_H
 #define _CREATUREFACTORY_H
 
+class Creature;
+class Agent;
+
+#include "cocos2d.h"
 #include <string>
-#include "Creature.h"
+
+// Include all the agents and creatures.
+#include "Ant.h"
 
 class CreatureFactory {
-public: 
-    
-    /**
-     * @param creatureType
-     * @param agentType
-     */
-    Creature* createCreature(std::string creatureType, std::string agentType);
+public:
+    Creature* createCreature(int teamId, cocos2d::Color3B teamColour, std::string creatureType, std::string agentType);
 };
 
 #endif //_CREATUREFACTORY_H
