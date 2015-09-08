@@ -46,8 +46,8 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="game.rc">
+    <Image Include="..\Resources\Oscillip - logo.png">
       <Filter>resource</Filter>
-    </ResourceCompile>
+    </Image>
   </ItemGroup>
 </Project>

@@ -32,11 +32,12 @@ bool SplashScene::init()
 
 	// Load stuff
 	// Display logo
-	/*
-	auto logo = Sprite::create("logo.png");
-	logo->setPosition(visibleSize.width / 2, visibleSize.height / 2);
+	
+	auto logo = Sprite::create("Oscillip - logo.png");
+	logo->setPosition(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y);
 	this->addChild(logo);
-	*/
+	
+	
 
 	// Schedule scene transition after load
 	this->scheduleOnce(schedule_selector(SplashScene::goToMenuScene), SPLASH_SCENE_DELAY);
