@@ -16,6 +16,9 @@ class Item: public GameObject {
 public: 
     
     virtual std::string getType();
+	int getQuantity();
+	bool takeQuantity(int quantity);
+	void putQuantity(int quantity);
 private: 
     int quantity;
 };

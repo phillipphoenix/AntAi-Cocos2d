@@ -12,6 +12,6 @@
  */
 
 
-Action Agent::step() {
-	return Action::MOVE_DOWN;
+Action Agent::step(int hp, cocos2d::Point* pos, CreatureMap* visibleMap, CreatureMap* creatureMap, std::string currentItem, Action lastAction) {
+	return Action::NONE; // Default action is to do nothing.
 }

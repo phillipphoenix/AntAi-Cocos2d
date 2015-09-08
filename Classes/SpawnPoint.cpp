@@ -13,5 +13,9 @@
 
 
 void SpawnPoint::step() {
+	for (std::vector<Item>::iterator item = items.begin(); item != items.end(); ++item) {
+		if (item->getType() == "food" && item->getQuantity() > 0) {
 
+		}
+	}
 }
