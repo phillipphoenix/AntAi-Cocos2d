@@ -2,7 +2,7 @@
 #define __SPLASH_SCENE_H__
 
 #include "cocos2d.h"
-#include "proj.win32\MenuScene.h"
+#include "MenuScene.h"
 
 #define SPLASH_SCENE_DELAY 2
 

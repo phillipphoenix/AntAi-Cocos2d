@@ -2,7 +2,7 @@
 #define __MENU_SCENE_H__
 
 #include "cocos2d.h"
-#include "proj.win32\GameScene.h"
+#include "GameScene.h"
 
 class MenuScene : public cocos2d::Layer
 {
