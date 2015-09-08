@@ -2,9 +2,13 @@
 #define __GAME_SCENE_H__
 
 #include "cocos2d.h"
+#include "GameMap.h"
+
+using namespace cocos2d;
 
 class GameScene : public cocos2d::Layer
 {
+
 public:
 	// there's no 'id' in cpp, so we recommend returning the class instance pointer
 	static cocos2d::Scene* createScene();
@@ -14,6 +18,11 @@ public:
 
 	// implement the "static create()" method manually
 	CREATE_FUNC(GameScene);
+
+	void draw(Renderer *renderer, const Mat4 &transform, uint32_t flags);
+private:
+	GameMap map;
+
 };
 
 #endif // __GAME_SCENE_H__

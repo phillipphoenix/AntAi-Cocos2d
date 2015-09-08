@@ -48,9 +48,6 @@
     <ClCompile Include="..\Classes\Item.cpp">
       <Filter>src\Entities</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Map.cpp">
-      <Filter>src\Entities</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\MapGenerator.cpp">
       <Filter>src\Entities</Filter>
     </ClCompile>
@@ -65,6 +62,9 @@
     </ClCompile>
     <ClCompile Include="..\Classes\MenuScene.cpp">
       <Filter>src\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameMap.cpp">
+      <Filter>src\Entities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -98,9 +98,6 @@
     <ClInclude Include="..\Classes\Item.h">
       <Filter>src\Entities</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Map.h">
-      <Filter>src\Entities</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\MapGenerator.h">
       <Filter>src\Entities</Filter>
     </ClInclude>
@@ -118,6 +115,12 @@
     </ClInclude>
     <ClInclude Include="..\Classes\MenuScene.h">
       <Filter>src\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameMap.h">
+      <Filter>src\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TileType.h">
+      <Filter>src\Entities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

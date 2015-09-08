@@ -31,9 +31,18 @@ bool GameScene::init()
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
 	// Test
-	auto testLabel = Label::createWithSystemFont("Here comes the bride...", "Arial", 20);
+	/*auto testLabel = Label::createWithSystemFont("Here comes the bride...", "Arial", 20);
 	testLabel->setPosition(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y);
-	this->addChild(testLabel);
+	this->addChild(testLabel);*/
+
+	MapGenerator gen = MapGenerator();
+	auto teams = std::vector<Team>();
+	map = GameMap(100, 100, teams, gen);	
 
 	return true;
+}
+
+void GameScene::draw(Renderer * renderer, const Mat4 & transform, uint32_t flags)
+{
+	map.draw();
 }
