@@ -30,5 +30,10 @@ bool GameScene::init()
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
+	// Test
+	auto testLabel = Label::createWithSystemFont("Here comes the bride...", "Arial", 20);
+	testLabel->setPosition(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y);
+	this->addChild(testLabel);
+
 	return true;
 }
