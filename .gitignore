@@ -76,3 +76,6 @@ out/
 *.tar
 *.tgz
 *.gtgz
+
+# Project specific files
+*AntAI.opensdf
