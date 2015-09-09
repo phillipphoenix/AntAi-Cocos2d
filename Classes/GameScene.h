@@ -3,6 +3,9 @@
 
 #include "cocos2d.h"
 #include "GameMap.h"
+#include "Team.h"
+#include "AgentAction.h"
+#include <vector>
 
 class GameScene : public cocos2d::Layer
 {
@@ -21,6 +24,7 @@ public:
 	GameMap getMap();
 
 private:
+	std::vector<Team> teams;
 	GameMap map;
 	void keyPressed(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event *event);
 	void keyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event *event);

@@ -9,7 +9,7 @@
 #define _CREATURE_H
 
 #include "cocos2d.h"
-#include "Action.h"
+#include "AgentAction.h"
 #include "GameObject.h"
 #include "Agent.h"
 #include "CreatureMap.h"
@@ -27,9 +27,9 @@ public:
 	It returns the action, to the caller of the step method, which will handle the action, if it is valid.
 	Creatures inheriting from this class can override the step method in order to restrict the valid moves for a particular creature.
 	*/
-    Action step();
+    AgentAction step();
 
-	Action getLastAction();
+	AgentAction getLastAction();
 	/* Get the game map as the creature knows it. */
     CreatureMap getMap();
 	/* Update the part of the map, visible to the creature (with the creature in the middle). */
@@ -47,7 +47,7 @@ protected:
     CreatureMap map; // The game map as the creature knows it.
 	CreatureMap visibleMap; // The part of the map, visible to the creature (with the creature in the middle).
 	cocos2d::Point pos;
-	Action lastAction;
+	AgentAction lastAction;
 	std::string currentItem;
 };
 
