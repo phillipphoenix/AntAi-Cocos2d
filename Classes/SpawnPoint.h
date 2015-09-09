@@ -13,13 +13,18 @@
 #include "CreatureFactory.h"
 #include "Item.h"
 #include <vector>
+#include <string>
 
 
 class SpawnPoint: public GameObject {
 public: 
-    
+	SpawnPoint() {};
+	SpawnPoint(int teamId, cocos2d::Color3B teamColour, std::string creatureType, std::string agentType);
     void step();
-private: 
+private:
+	int teamId;
+	std::string creatureType;
+	std::string agentType;
     int hp;
     cocos2d::Point pos;
 	CreatureFactory factory;

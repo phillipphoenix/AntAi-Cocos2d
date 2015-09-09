@@ -16,7 +16,7 @@
  * @param creatureType
  * @param agentType
  */
-Creature* CreatureFactory::createCreature(int teamId, cocos2d::Color3B teamColour, std::string creatureType, std::string agentType) {
+Creature* CreatureFactory::createCreature(int teamId, cocos2d::Color3B teamColour, std::string creatureType, std::string agentType, cocos2d::Point pos) {
 	Agent* agent;
 	// Find which agent to create.
 	if (agentType == "antAgent") {
@@ -26,7 +26,7 @@ Creature* CreatureFactory::createCreature(int teamId, cocos2d::Color3B teamColou
 	Creature* creature;
 	// Find which creature to create.
 	if (creatureType == "ant") {
-		creature = new Ant(teamId, teamColour, agent);
+		creature = new Ant(teamId, teamColour, agent, pos);
 	}
 
 	return creature;

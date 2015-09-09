@@ -21,6 +21,11 @@ public:
 	std::string getCreatureType();
 	std::string getAgentType();
 	cocos2d::Color3B getColour();
+	// These four methods return the begin and end iterators for the creature and spawn point vectors.
+	std::vector<Creature>::iterator getCreatureIteratorBegin();
+	std::vector<Creature>::iterator getCreatureIteratorEnd();
+	std::vector<SpawnPoint>::iterator getSpawnPointIteratorBegin();
+	std::vector<SpawnPoint>::iterator getSpawnPointIteratorEnd();
 private: 
     int id;
     std::string creatureType;

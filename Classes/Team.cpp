@@ -30,3 +30,23 @@
 	 {
 		 return colour;
 	 }
+
+	 std::vector<Creature>::iterator Team::getCreatureIteratorBegin()
+	 {
+		 return creatures.begin();
+	 }
+
+	 std::vector<Creature>::iterator Team::getCreatureIteratorEnd()
+	 {
+		 return creatures.end();
+	 }
+
+	 std::vector<SpawnPoint>::iterator Team::getSpawnPointIteratorBegin()
+	 {
+		 return spawnPoints.begin();
+	 }
+
+	 std::vector<SpawnPoint>::iterator Team::getSpawnPointIteratorEnd()
+	 {
+		 return spawnPoints.end();
+	 }
