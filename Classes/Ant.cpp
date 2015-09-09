@@ -11,7 +11,7 @@
  * Ant implementation
  */
 
-Ant::Ant(int teamId, cocos2d::Color3B teamColour, Agent* agent) : Creature(teamId, teamColour, agent)
+Ant::Ant(int teamId, cocos2d::Color3B teamColour, Agent* agent, cocos2d::Point pos) : Creature(teamId, teamColour, agent, pos)
 {
 
 }

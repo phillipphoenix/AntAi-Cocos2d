@@ -12,7 +12,7 @@
 
 class Ant: public Creature {
 public:
-	Ant(int teamId, cocos2d::Color3B teamColour, Agent* agent);
+	Ant(int teamId, cocos2d::Color3B teamColour, Agent* agent, cocos2d::Point pos);
 };
 
 #endif //_ANT_H

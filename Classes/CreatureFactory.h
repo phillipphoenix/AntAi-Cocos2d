@@ -19,7 +19,7 @@ class Agent;
 
 class CreatureFactory {
 public:
-    Creature* createCreature(int teamId, cocos2d::Color3B teamColour, std::string creatureType, std::string agentType);
+    Creature* createCreature(int teamId, cocos2d::Color3B teamColour, std::string creatureType, std::string agentType, cocos2d::Point pos);
 };
 
 #endif //_CREATUREFACTORY_H

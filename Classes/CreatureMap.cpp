@@ -19,6 +19,11 @@ CreatureMap::CreatureMap(int width, int height)
 {
 	this->width = width;
 	this->height = height;
+	// Initialise the vectors to the correct lengths.
+	map.resize(width);
+	for (int i = 0; i < width; i++) {
+		map[i].resize(height);
+	}
 }
 
 int CreatureMap::getWidth()
