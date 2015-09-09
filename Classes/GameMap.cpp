@@ -109,7 +109,7 @@ void GameMap::updateCameraPosition()
 		--firstVisibleTile_y;
 	} else if(keyLeft && firstVisibleTile_x > 0) {
 		--firstVisibleTile_x;
-	} else if (keyRight && firstVisibleTile_x < baseGrid.size() - tileMap.size()) {
+	} else if (keyRight && firstVisibleTile_x <= baseGrid.size() - tileMap.size()) {
 		++firstVisibleTile_x;
 	}
 }

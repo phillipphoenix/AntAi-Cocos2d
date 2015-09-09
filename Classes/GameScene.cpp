@@ -32,7 +32,7 @@ bool GameScene::init()
 
 	
 	// Create map
-	MapGenerator gen = MapGenerator();
+	MapGenerator gen = MapGenerator(75, 30, 1);
 	auto teams = std::vector<Team>();
 	map = GameMap(100, 100, teams, gen, this);
 
