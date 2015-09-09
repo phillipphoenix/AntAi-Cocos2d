@@ -15,17 +15,27 @@ class GameObject;
 #include "TileType.h"
 
 
-	class MapGenerator {
-	public:
-		std::vector<std::vector<TileType>> generateBaseMap(int width, int height);
+class MapGenerator {
+public:
+	MapGenerator();
+	MapGenerator(int stoneThreshold, int dirtThreshold, int smoothingSteps);
+	std::vector<std::vector<TileType>> generateBaseMap(int width, int height);
 
-		/**
-		* @param baseMap
-		* @param teams
-		*/
-		std::vector<std::vector<GameObject*>> placeGameObjects(std::vector<std::vector<TileType>> baseMap, std::vector<Team> teams);
+	/**
+	* @param baseMap
+	* @param teams
+	*/
+	std::vector<std::vector<GameObject*>> placeGameObjects(std::vector<std::vector<TileType>> baseMap, std::vector<Team> teams);
+private:
+	int stoneThreshold;
+	int dirtThreshold;
+	int smoothingSteps;
 
-	};
+	void smoothMap(std::vector<std::vector<TileType>>& baseGrid);
+
+	int measureSurroundings(int gridX, int gridY, std::vector<std::vector<TileType>>& baseGrid);
+
+};
 
 
 
