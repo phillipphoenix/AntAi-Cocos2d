@@ -30,19 +30,56 @@ bool GameScene::init()
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	// Test
-	/*auto testLabel = Label::createWithSystemFont("Here comes the bride...", "Arial", 20);
-	testLabel->setPosition(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y);
-	this->addChild(testLabel);*/
-
+	
+	// Create map
 	MapGenerator gen = MapGenerator();
 	auto teams = std::vector<Team>();
-	map = GameMap(100, 100, teams, gen);	
+	map = GameMap(100, 100, teams, gen, this);
+
+	// Schedule update function
+	this->scheduleUpdate();
+
+	// Schedule camera control with keyboard arrows
+	auto keyboardListener = EventListenerKeyboard::create();
+	keyboardListener->onKeyPressed = CC_CALLBACK_2(GameScene::keyPressed, this);
+	keyboardListener->onKeyReleased = CC_CALLBACK_2(GameScene::keyReleased, this);
+	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(keyboardListener, this);
 
 	return true;
 }
 
-void GameScene::draw(Renderer * renderer, const Mat4 & transform, uint32_t flags)
+void GameScene::keyPressed(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event *event)
 {
-	map.draw();
+	if (keyCode == EventKeyboard::KeyCode::KEY_W || keyCode == EventKeyboard::KeyCode::KEY_UP_ARROW) {
+		map.setKeyUp(true);
+	} else if (keyCode == EventKeyboard::KeyCode::KEY_S || keyCode == EventKeyboard::KeyCode::KEY_DOWN_ARROW)	{
+		map.setKeyDown(true);
+	} else if (keyCode == EventKeyboard::KeyCode::KEY_A || keyCode == EventKeyboard::KeyCode::KEY_LEFT_ARROW)	{
+		map.setKeyLeft(true);
+	} else if (keyCode == EventKeyboard::KeyCode::KEY_D || keyCode == EventKeyboard::KeyCode::KEY_RIGHT_ARROW)	{
+		map.setKeyRight(true);
+	}
+}
+
+void GameScene::keyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event *event)
+{
+	if (keyCode == EventKeyboard::KeyCode::KEY_W || keyCode == EventKeyboard::KeyCode::KEY_UP_ARROW) {
+		map.setKeyUp(false);
+	} else if (keyCode == EventKeyboard::KeyCode::KEY_S || keyCode == EventKeyboard::KeyCode::KEY_DOWN_ARROW) {
+		map.setKeyDown(false);
+	} else if (keyCode == EventKeyboard::KeyCode::KEY_A || keyCode == EventKeyboard::KeyCode::KEY_LEFT_ARROW) {
+		map.setKeyLeft(false);
+	} else if (keyCode == EventKeyboard::KeyCode::KEY_D || keyCode == EventKeyboard::KeyCode::KEY_RIGHT_ARROW) {
+		map.setKeyRight(false);
+	}
+}
+
+GameMap GameScene::getMap()
+{
+	return map;
+}
+
+void GameScene::update(float dt)
+{
+	map.step();
 }

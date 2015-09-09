@@ -4,8 +4,6 @@
 #include "cocos2d.h"
 #include "GameMap.h"
 
-using namespace cocos2d;
-
 class GameScene : public cocos2d::Layer
 {
 
@@ -19,9 +17,13 @@ public:
 	// implement the "static create()" method manually
 	CREATE_FUNC(GameScene);
 
-	void draw(Renderer *renderer, const Mat4 &transform, uint32_t flags);
+	void update(float dt);
+	GameMap getMap();
+
 private:
 	GameMap map;
+	void keyPressed(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event *event);
+	void keyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event *event);
 
 };
 

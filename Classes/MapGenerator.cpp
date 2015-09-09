@@ -18,7 +18,7 @@
 		 baseGrid[x].resize(height);
 		 for (int y = 0; y < height; ++y) {
 			 // Define values
-			 if (x % 2 == 0) baseGrid[x][y] = TileType::stone;
+			 if ((x + y) % 2 == 0) baseGrid[x][y] = TileType::stone;
 			 else baseGrid[x][y] = TileType::dirt;
 		 }
 	 }

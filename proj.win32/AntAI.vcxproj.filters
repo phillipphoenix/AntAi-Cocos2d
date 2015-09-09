@@ -1,139 +1,126 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="win32">
-      <UniqueIdentifier>{84a8ebd7-7cf0-47f6-b75e-d441df67da40}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="resource">
-      <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src">
-      <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Scenes">
-      <UniqueIdentifier>{6e41e710-05ec-4791-af9a-779c89dc04eb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Entities">
-      <UniqueIdentifier>{204ac352-878a-4321-ab3a-a6bb36d54715}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>win32</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\AppDelegate.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\SplashScene.cpp">
-      <Filter>src\Scenes</Filter>
-    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="..\Classes\Agent.cpp">
-      <Filter>src\Entities</Filter>
+      <Filter>Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Ant.cpp">
-      <Filter>src\Entities</Filter>
+      <Filter>Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Creature.cpp">
-      <Filter>src\Entities</Filter>
+      <Filter>Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\CreatureFactory.cpp">
-      <Filter>src\Entities</Filter>
+      <Filter>Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CreatureMap.cpp">
+      <Filter>Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Food.cpp">
-      <Filter>src\Entities</Filter>
+      <Filter>Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameMap.cpp">
+      <Filter>Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\GameObject.cpp">
-      <Filter>src\Entities</Filter>
+      <Filter>Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Item.cpp">
-      <Filter>src\Entities</Filter>
+      <Filter>Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\MapGenerator.cpp">
-      <Filter>src\Entities</Filter>
+      <Filter>Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\SpawnPoint.cpp">
-      <Filter>src\Entities</Filter>
+      <Filter>Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Team.cpp">
-      <Filter>src\Entities</Filter>
+      <Filter>Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\GameScene.cpp">
-      <Filter>src\Scenes</Filter>
+      <Filter>Scenes</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\MenuScene.cpp">
-      <Filter>src\Scenes</Filter>
+      <Filter>Scenes</Filter>
     </ClCompile>
-<<<<<<< HEAD
-    <ClCompile Include="..\Classes\GameMap.cpp">
-=======
-    <ClCompile Include="..\Classes\CreatureMap.cpp">
->>>>>>> 244e1f7bcfe33be093bc32eda76b0f429118ff7d
-      <Filter>src\Entities</Filter>
+    <ClCompile Include="..\Classes\SplashScene.cpp">
+      <Filter>Scenes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="main.h">
-      <Filter>win32</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\AppDelegate.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\SplashScene.h">
-      <Filter>src\Scenes</Filter>
+    <ClInclude Include="..\Classes\AppDelegate.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="..\Classes\Action.h">
+      <Filter>Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Agent.h">
-      <Filter>src\Entities</Filter>
+      <Filter>Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Ant.h">
-      <Filter>src\Entities</Filter>
+      <Filter>Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Creature.h">
-      <Filter>src\Entities</Filter>
+      <Filter>Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\CreatureFactory.h">
-      <Filter>src\Entities</Filter>
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CreatureMap.h">
+      <Filter>Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Food.h">
-      <Filter>src\Entities</Filter>
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameMap.h">
+      <Filter>Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\GameObject.h">
-      <Filter>src\Entities</Filter>
+      <Filter>Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Item.h">
-      <Filter>src\Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\MapGenerator.h">
-      <Filter>src\Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\SpawnPoint.h">
-      <Filter>src\Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Team.h">
-      <Filter>src\Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Action.h">
-      <Filter>src\Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\GameScene.h">
-      <Filter>src\Scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\MenuScene.h">
-      <Filter>src\Scenes</Filter>
-    </ClInclude>
-<<<<<<< HEAD
-    <ClInclude Include="..\Classes\GameMap.h">
-      <Filter>src\Entities</Filter>
+      <Filter>Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\TileType.h">
-=======
-    <ClInclude Include="..\Classes\CreatureMap.h">
->>>>>>> 244e1f7bcfe33be093bc32eda76b0f429118ff7d
-      <Filter>src\Entities</Filter>
+      <Filter>Entities</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\Team.h">
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MapGenerator.h">
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SpawnPoint.h">
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameScene.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MenuScene.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SplashScene.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Entities">
+      <UniqueIdentifier>{581166f0-1626-4a24-a416-c0187833219c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scenes">
+      <UniqueIdentifier>{cb7648c3-a4db-4b45-90a0-22fecc88c520}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{1b48aa22-a3fa-4058-85f3-0496dbeddc70}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\Resources\Oscillip - logo.png">
-      <Filter>resource</Filter>
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\Resources\rect.png">
+      <Filter>Resources</Filter>
     </Image>
   </ItemGroup>
 </Project>
