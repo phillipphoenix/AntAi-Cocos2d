@@ -31,7 +31,7 @@ void Creature::setPosition(cocos2d::Point pos)
 }
 
 Action Creature::step() {
-	return agent.step(hp, pos, visibleMap, map, currentItem, lastAction);
+	return agent.step(hp, pos, visibleMap, currentItem, lastAction);
 }
 
 Action Creature::getLastAction() {

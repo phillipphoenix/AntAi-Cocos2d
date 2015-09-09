@@ -52,9 +52,23 @@ std::vector<std::vector<TileType>> MapGenerator::generateBaseMap(int width, int 
 	return baseGrid;
 }
 
-std::vector<std::vector<GameObject*>> MapGenerator::placeGameObjects(std::vector<std::vector<TileType>> baseMap, std::vector<Team> teams)
+std::vector<std::vector<GameObject*>> MapGenerator::placeGameObjects(std::vector<std::vector<TileType>>& baseMap, std::vector<Team> teams)
 {
-	return std::vector<std::vector<GameObject*>>();
+	auto objectGrid = std::vector<std::vector<GameObject*>>();
+
+	int width = baseMap.size();
+	int height = baseMap[0].size();
+
+	// Reserve memory
+	objectGrid.resize(width);
+	for (int x = 0; x < width; ++x) {
+		// Reserve memory for each column
+		objectGrid[x].resize(height);
+		for (int y = 0; y < height; ++y) {
+			
+		}
+	}
+	return objectGrid;
 }
 
 void MapGenerator::smoothMap(std::vector<std::vector<TileType>>& baseGrid)

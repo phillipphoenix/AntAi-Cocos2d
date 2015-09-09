@@ -25,7 +25,7 @@ public:
 	* @param baseMap
 	* @param teams
 	*/
-	std::vector<std::vector<GameObject*>> placeGameObjects(std::vector<std::vector<TileType>> baseMap, std::vector<Team> teams);
+	std::vector<std::vector<GameObject*>> placeGameObjects(std::vector<std::vector<TileType>>& baseMap, std::vector<Team> teams);
 private:
 	int stoneThreshold;
 	int dirtThreshold;
