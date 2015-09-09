@@ -30,6 +30,8 @@ public:
 	void setKeyDown(bool state);
 	void setKeyLeft(bool state);
 	void setKeyRight(bool state);
+
+	void executeAction(Creature* creature, AgentAction action);
 	
 private:
 	// Size of the tile sprite in points

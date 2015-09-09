@@ -81,5 +81,18 @@ GameMap GameScene::getMap()
 
 void GameScene::update(float dt)
 {
+	// Iterate over all the teams' spawn points and ants, validate their actions and perform them.
+	for (std::vector<Team>::iterator itTeam = teams.begin(); itTeam < teams.end(); itTeam++) {
+		// Spawn points.
+		for (std::vector<SpawnPoint>::iterator itSpawnPoint = itTeam->getSpawnPointIteratorBegin(); itSpawnPoint < itTeam->getSpawnPointIteratorEnd(); itSpawnPoint++) {
+			itSpawnPoint->step();
+		}
+		// Creatures.
+		for (std::vector<Creature>::iterator itCreature = itTeam->getCreatureIteratorBegin(); itCreature < itTeam->getCreatureIteratorEnd(); itCreature++) {
+			AgentAction action = itCreature->step();	// Get action from creature.
+			map.executeAction(&(*itCreature), action);	// Execute action, IF valid (map handles validation).
+		}
+	}
+	// Update the sprite map to match the new map realities! OoooOooOooOoOOooOoOooHhhh...
 	map.step();
 }

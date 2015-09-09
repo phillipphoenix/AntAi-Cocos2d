@@ -8,7 +8,7 @@
 #ifndef _ACTION_H
 #define _ACTION_H
 
-enum Action {
+enum AgentAction {
 	NONE = 0,
 	MOVE_LEFT = 1, MOVE_UP = 2, MOVE_RIGHT = 3, MOVE_DOWN = 4,
 	DIG_LEFT = 5, DIG_UP = 6, DIG_RIGHT = 7, DIG_DOWN = 8,

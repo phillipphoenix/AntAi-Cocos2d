@@ -130,3 +130,8 @@ void GameMap::setKeyRight(bool state)
 {
 	keyRight = state;
 }
+
+void GameMap::executeAction(Creature * creature, AgentAction action)
+{
+
+}
