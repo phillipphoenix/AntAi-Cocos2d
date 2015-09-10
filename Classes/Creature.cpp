@@ -83,3 +83,8 @@ std::string Creature::getCurrentItem()
 {
 	return currentItem;
 }
+
+cocos2d::Point Creature::getPosition()
+{
+	return pos;
+}

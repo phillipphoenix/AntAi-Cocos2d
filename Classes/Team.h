@@ -26,6 +26,12 @@ public:
 	std::vector<Creature>::iterator getCreatureIteratorEnd();
 	std::vector<SpawnPoint>::iterator getSpawnPointIteratorBegin();
 	std::vector<SpawnPoint>::iterator getSpawnPointIteratorEnd();
+	// Add elements to the creature and spawn point lists.
+	void addCreature(Creature& creature);
+	void addSpawnPoint(SpawnPoint& spawnPoint);
+	// Get lists.
+	std::vector<Creature>* getCreatures();
+	std::vector<SpawnPoint>* getSpawnPoints();
 private: 
     int id;
     std::string creatureType;

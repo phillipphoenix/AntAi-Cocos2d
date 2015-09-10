@@ -19,8 +19,9 @@
 class SpawnPoint: public GameObject {
 public: 
 	SpawnPoint() {};
-	SpawnPoint(int teamId, cocos2d::Color3B teamColour, std::string creatureType, std::string agentType);
-    void step();
+	SpawnPoint(int teamId, cocos2d::Color3B teamColour, cocos2d::Point pos, std::string creatureType, std::string agentType);
+    void step(std::vector<Creature>* teamCreatureList); // Give the creature list, so it can be updated with a new creature.
+	cocos2d::Point getPos();
 private:
 	int teamId;
 	std::string creatureType;
