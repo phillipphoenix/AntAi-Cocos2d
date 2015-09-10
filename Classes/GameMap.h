@@ -42,10 +42,10 @@ private:
 	float tileWidth;
 	float tileHeight;
 	// Colours used for the base grid
-	//cocos2d::Color3B emptyColour = cocos2d::Color3B(255, 229, 204); // Empty
 	cocos2d::Color3B emptyColour = cocos2d::Color3B(255, 153, 51); // Empty
 	cocos2d::Color3B dirtColour = cocos2d::Color3B(204, 102, 0); // Dirt
 	cocos2d::Color3B stoneColour = cocos2d::Color3B(96, 96, 96); // Stone
+
 	// Map generator
 	MapGenerator gen;
 	// Teams

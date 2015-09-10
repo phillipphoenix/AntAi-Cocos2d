@@ -25,7 +25,7 @@ public:
 	* @param baseMap
 	* @param teams
 	*/
-	std::vector<std::vector<GameObject*>> placeGameObjects(std::vector<std::vector<TileType>> baseMap, std::vector<Team> teams);
+	std::vector<std::vector<GameObject*>> placeGameObjects(std::vector<std::vector<TileType>>& baseMap, std::vector<Team> teams);
 private:
 	int stoneThreshold;
 	int dirtThreshold;
@@ -34,6 +34,8 @@ private:
 	void smoothMap(std::vector<std::vector<TileType>>& baseGrid);
 
 	int measureSurroundings(int gridX, int gridY, std::vector<std::vector<TileType>>& baseGrid);
+
+	cocos2d::Vec2 findEmptyTile(std::vector<std::vector<TileType>>& baseGrid);
 
 };
 
