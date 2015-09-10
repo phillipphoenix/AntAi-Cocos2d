@@ -41,8 +41,7 @@ private:
 	cocos2d::Color3B emptyColour = cocos2d::Color3B(255, 153, 51); // Empty
 	cocos2d::Color3B dirtColour = cocos2d::Color3B(204, 102, 0); // Dirt
 	cocos2d::Color3B stoneColour = cocos2d::Color3B(96, 96, 96); // Stone
-	// Colour used for the spawn points
-	cocos2d::Color3B stoneColour = cocos2d::Color3B(255, 255, 255);
+
 	// Map generator
 	MapGenerator gen;
 	// Teams

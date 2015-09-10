@@ -65,7 +65,24 @@ std::vector<std::vector<GameObject*>> MapGenerator::placeGameObjects(std::vector
 		// Reserve memory for each column
 		objectGrid[x].resize(height);
 		for (int y = 0; y < height; ++y) {
-			
+			objectGrid[x][y] = NULL;
+		}
+	}
+
+	// Place spawn point for every team
+	for (int i = 0; i < teams.size(); ++i) {
+		// Get random empty tile
+		auto pos = findEmptyTile(baseMap);
+		// Create and place spawn point
+		auto newSpawnPoint = SpawnPoint(teams[i].getId(), teams[i].getColour(), "ant", "antAgent");
+		objectGrid[pos.x][pos.y] = &newSpawnPoint;
+		// Add to the team's spawnPoint list
+
+		// Turn surrounding tiles into empty tiles
+		for (int x = pos.x - 1; x < pos.x + 1; ++x) {
+			for (int y = pos.y - 1; y < pos.y + 1; ++y) {
+				baseMap[x][y] = TileType::empty;
+			}
 		}
 	}
 	return objectGrid;
@@ -112,4 +129,17 @@ int MapGenerator::measureSurroundings(int gridX, int gridY, std::vector<std::vec
 		}
 	}
 	return count;
+}
+
+cocos2d::Vec2 MapGenerator::findEmptyTile(std::vector<std::vector<TileType>>& baseGrid)
+{
+	auto coords = cocos2d::Vec2();
+	// Attempt to get a random empty tile from the base grid
+	// TODO: Possible infinite loop
+	do {
+		coords.x = rand() % baseGrid.size();
+		coords.y = rand() % baseGrid[0].size();
+	} while (baseGrid[coords.x][coords.y] != TileType::empty);
+
+	return coords;
 }

@@ -35,6 +35,8 @@ private:
 
 	int measureSurroundings(int gridX, int gridY, std::vector<std::vector<TileType>>& baseGrid);
 
+	cocos2d::Vec2 findEmptyTile(std::vector<std::vector<TileType>>& baseGrid);
+
 };
 
 
