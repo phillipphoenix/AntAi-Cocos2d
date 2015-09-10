@@ -65,6 +65,7 @@ private:
 
 	void updateCameraPosition();
 
+	bool spaceEmpty(int x, int y);
 };
 
 

@@ -39,6 +39,7 @@ public:
 	/* The range the creature can see in each direction (the visible map is square!). */
 	int getVisionRange();
 	std::string getCurrentItem();
+	cocos2d::Point getPosition();
 protected:
 	int teamId;
 	Agent agent;

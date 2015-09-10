@@ -85,7 +85,7 @@ void GameScene::update(float dt)
 	for (std::vector<Team>::iterator itTeam = teams.begin(); itTeam < teams.end(); itTeam++) {
 		// Spawn points.
 		for (std::vector<SpawnPoint>::iterator itSpawnPoint = itTeam->getSpawnPointIteratorBegin(); itSpawnPoint < itTeam->getSpawnPointIteratorEnd(); itSpawnPoint++) {
-			itSpawnPoint->step();
+			itSpawnPoint->step(itTeam->getCreatures());
 		}
 		// Creatures.
 		for (std::vector<Creature>::iterator itCreature = itTeam->getCreatureIteratorBegin(); itCreature < itTeam->getCreatureIteratorEnd(); itCreature++) {

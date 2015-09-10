@@ -50,3 +50,23 @@
 	 {
 		 return spawnPoints.end();
 	 }
+
+	 void Team::addCreature(Creature & creature)
+	 {
+		 creatures.push_back(creature);
+	 }
+
+	 void Team::addSpawnPoint(SpawnPoint & spawnPoint)
+	 {
+		 spawnPoints.push_back(spawnPoint);
+	 }
+
+	 std::vector<Creature>* Team::getCreatures()
+	 {
+		 return &creatures;
+	 }
+
+	 std::vector<SpawnPoint>* Team::getSpawnPoints()
+	 {
+		 return &spawnPoints;
+	 }

@@ -114,6 +114,11 @@ void GameMap::updateCameraPosition()
 	}
 }
 
+bool GameMap::spaceEmpty(int x, int y)
+{
+	return x >= 0 && x < baseGrid.size() && y >= 0 && y < baseGrid[0].size() && baseGrid[x][y] == 0 && gameObjectGrid[x][y] == NULL;
+}
+
 void GameMap::setKeyUp(bool state)
 {
 	keyUp = state;
@@ -131,7 +136,61 @@ void GameMap::setKeyRight(bool state)
 	keyRight = state;
 }
 
-void GameMap::executeAction(Creature * creature, AgentAction action)
+void GameMap::executeAction(Creature* creature, AgentAction action)
 {
+	cocos2d::Point pos = creature->getPosition();
+	switch (action)
+	{
+	case NONE: // Lazy creature...
+		break;
+	case MOVE_LEFT:
+		if (spaceEmpty(pos.x - 1, pos.y)) {
 
+		}
+		break;
+	case MOVE_UP:
+		break;
+	case MOVE_RIGHT:
+		break;
+	case MOVE_DOWN:
+		break;
+	case DIG_LEFT:
+		break;
+	case DIG_UP:
+		break;
+	case DIG_RIGHT:
+		break;
+	case DIG_DOWN:
+		break;
+	case ATTACK_LEFT:
+		break;
+	case ATTACK_UP:
+		break;
+	case ATTACK_RIGHT:
+		break;
+	case ATTACK_DOWN:
+		break;
+	case PICKUP_LEFT:
+		break;
+	case PICKUP_UP:
+		break;
+	case PICKUP_RIGHT:
+		break;
+	case PICKUP_DOWN:
+		break;
+	case PUTDOWN_LEFT:
+		break;
+	case PUTDOWN_UP:
+		break;
+	case PUTDOWN_RIGHT:
+		break;
+	case PUTDOWN_DOWN:
+		break;
+	case EAT:
+		break;
+	case SHARE_KNOWLEDGE:
+		break;
+	default:
+		break;
+	}
 }
