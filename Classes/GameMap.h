@@ -9,12 +9,12 @@
 #define _MAP_H
 
 class GameObject;
+class Team;
 
 #include <vector>
 #include <cmath>
 #include "TileType.h"
 #include "MapGenerator.h"
-#include "Team.h"
 
 
 #define TILE_HEIGHT 6
@@ -33,6 +33,10 @@ public:
 
 	void executeAction(Creature* creature, AgentAction action);
 	
+	/* Returns true if (x,y) is inside the map and nothing is in that position on either the baseGrid or the gameObjectGrid */
+	bool spaceEmpty(int x, int y);
+
+	void addGameObject(int x, int y, GameObject* gameObject);
 private:
 	// Size of the tile sprite in points
 	float tileWidth;
@@ -64,8 +68,6 @@ private:
 	void calculateTileDimensions();
 
 	void updateCameraPosition();
-
-	bool spaceEmpty(int x, int y);
 };
 
 

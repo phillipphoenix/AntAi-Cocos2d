@@ -17,6 +17,8 @@ class Creature;
 
 class Team {
 public:
+	Team();
+	Team(int id, cocos2d::Color3B teamColour, std::string creatureType, std::string agentType);
 	int getId();
 	std::string getCreatureType();
 	std::string getAgentType();

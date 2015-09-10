@@ -8,10 +8,14 @@
 #ifndef _SPAWNPOINT_H
 #define _SPAWNPOINT_H
 
+class Team;
+class GameMap;
+
 #include "cocos2d.h"
 #include "GameObject.h"
 #include "CreatureFactory.h"
 #include "Item.h"
+#include "Food.h"
 #include <vector>
 #include <string>
 
@@ -20,7 +24,7 @@ class SpawnPoint: public GameObject {
 public: 
 	SpawnPoint() {};
 	SpawnPoint(int teamId, cocos2d::Color3B teamColour, cocos2d::Point pos, std::string creatureType, std::string agentType);
-    void step(std::vector<Creature>* teamCreatureList); // Give the creature list, so it can be updated with a new creature.
+    void step(std::vector<Creature>* teamCreatureList, GameMap& map); // Give the creature list, so it can be updated with a new creature.
 	cocos2d::Point getPos();
 private:
 	int teamId;
