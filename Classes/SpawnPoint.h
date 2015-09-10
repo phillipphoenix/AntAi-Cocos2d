@@ -19,6 +19,8 @@ class GameMap;
 #include <vector>
 #include <string>
 
+#include <iostream>
+
 
 class SpawnPoint: public GameObject {
 public: 

@@ -146,6 +146,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
   <ItemGroup>
     <ClCompile Include="..\Classes\Agent.cpp" />
     <ClCompile Include="..\Classes\Ant.cpp" />
+    <ClCompile Include="..\Classes\AntAgent.cpp" />
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\Creature.cpp" />
     <ClCompile Include="..\Classes\CreatureFactory.cpp" />
@@ -160,13 +161,13 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\SpawnPoint.cpp" />
     <ClCompile Include="..\Classes\SplashScene.cpp" />
     <ClCompile Include="..\Classes\Team.cpp" />
-    <ClCompile Include="AntAgent.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AgentAction.h" />
     <ClInclude Include="..\Classes\Agent.h" />
     <ClInclude Include="..\Classes\Ant.h" />
+    <ClInclude Include="..\Classes\AntAgent.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\Creature.h" />
     <ClInclude Include="..\Classes\CreatureFactory.h" />
@@ -182,7 +183,6 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\SplashScene.h" />
     <ClInclude Include="..\Classes\Team.h" />
     <ClInclude Include="..\Classes\TileType.h" />
-    <ClInclude Include="AntAgent.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>

@@ -42,7 +42,7 @@ public:
 	cocos2d::Point getPosition();
 protected:
 	int teamId;
-	Agent agent;
+	Agent* agent;
     int hp;
 	int visionRange = 3; // The range the creature can see in each direction (the visible map is square!).
     CreatureMap map; // The game map as the creature knows it.

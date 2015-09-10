@@ -16,6 +16,7 @@ class Agent;
 
 // Include all the agents and creatures.
 #include "Ant.h"
+#include "AntAgent.h"
 
 class CreatureFactory {
 public:

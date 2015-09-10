@@ -12,8 +12,13 @@
  */
 
 
-std::string Item::getType() {
-	return "";
+	 Item::Item()
+ {
+	 quantity = 0;
+ }
+
+ std::string Item::getType() {
+	return type;
 }
 
 int Item::getQuantity()

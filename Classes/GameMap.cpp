@@ -122,6 +122,20 @@ bool GameMap::spaceEmpty(int x, int y)
 	return x >= 0 && x < baseGrid.size() && y >= 0 && y < baseGrid[0].size() && baseGrid[x][y] == 0 && gameObjectGrid[x][y] == NULL;
 }
 
+int GameMap::getBaseGridValue(int x, int y)
+{
+	if (x >= 0 && x < baseGrid.size() && y >= 0 && y < baseGrid[0].size()) {
+		return baseGrid[x][y];
+	}
+}
+
+std::shared_ptr<GameObject> GameMap::getGameObjectGridValue(int x, int y)
+{
+	if (x >= 0 && x < gameObjectGrid.size() && y >= 0 && y < gameObjectGrid[0].size()) {
+		return gameObjectGrid[x][y];
+	}
+}
+
 void GameMap::addGameObject(int x, int y, GameObject& gameObject)
 {
 	if (spaceEmpty(x, y)) {
@@ -182,12 +196,35 @@ void GameMap::executeAction(Creature* creature, AgentAction action)
 		}
 		break;
 	case DIG_LEFT:
+		if (getBaseGridValue(pos.x - 1, pos.y) == TileType::dirt) {
+			baseGrid[pos.x - 1][pos.y] = TileType::empty;
+		} else if (getBaseGridValue(pos.x - 1, pos.y) == TileType::stone) {
+			baseGrid[pos.x - 1][pos.y] = TileType::dirt;
+		}
 		break;
 	case DIG_UP:
+		if (getBaseGridValue(pos.x, pos.y + 1) == TileType::dirt) {
+			baseGrid[pos.x][pos.y + 1] = TileType::empty;
+		}
+		else if (getBaseGridValue(pos.x, pos.y + 1) == TileType::stone) {
+			baseGrid[pos.x][pos.y + 1] = TileType::dirt;
+		}
 		break;
 	case DIG_RIGHT:
+		if (getBaseGridValue(pos.x + 1, pos.y) == TileType::dirt) {
+			baseGrid[pos.x + 1][pos.y] = TileType::empty;
+		}
+		else if (getBaseGridValue(pos.x + 1, pos.y) == TileType::stone) {
+			baseGrid[pos.x + 1][pos.y] = TileType::dirt;
+		}
 		break;
 	case DIG_DOWN:
+		if (getBaseGridValue(pos.x, pos.y - 1) == TileType::dirt) {
+			baseGrid[pos.x][pos.y - 1] = TileType::empty;
+		}
+		else if (getBaseGridValue(pos.x, pos.y - 1) == TileType::stone) {
+			baseGrid[pos.x][pos.y - 1] = TileType::dirt;
+		}
 		break;
 	case ATTACK_LEFT:
 		break;

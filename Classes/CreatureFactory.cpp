@@ -20,7 +20,7 @@ Creature* CreatureFactory::createCreature(int teamId, cocos2d::Color3B teamColou
 	Agent* agent;
 	// Find which agent to create.
 	if (agentType == "antAgent") {
-		// Set the agent variable.
+		agent = new AntAgent();
 	}
 
 	Creature* creature;

@@ -13,7 +13,6 @@
 class Food: public Item {
 public:
 	Food();
-	std::string getType();
 };
 
 #endif //_FOOD_H

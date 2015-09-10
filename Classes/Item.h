@@ -14,13 +14,15 @@
 
 class Item: public GameObject {
 public: 
-    
-    virtual std::string getType();
+	Item();
+    std::string getType();
 	int getQuantity();
 	bool takeQuantity(int quantity);
 	void putQuantity(int quantity);
 private: 
     int quantity;
+protected:
+	std::string type;
 };
 
 #endif //_ITEM_H

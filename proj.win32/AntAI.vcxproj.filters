@@ -48,7 +48,9 @@
     <ClCompile Include="..\Classes\SplashScene.cpp">
       <Filter>Scenes</Filter>
     </ClCompile>
-    <ClCompile Include="AntAgent.cpp" />
+    <ClCompile Include="..\Classes\AntAgent.cpp">
+      <Filter>Entities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
@@ -104,7 +106,7 @@
     <ClInclude Include="..\Classes\AgentAction.h">
       <Filter>Entities</Filter>
     </ClInclude>
-    <ClInclude Include="AntAgent.h">
+    <ClInclude Include="..\Classes\AntAgent.h">
       <Filter>Entities</Filter>
     </ClInclude>
   </ItemGroup>

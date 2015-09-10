@@ -35,6 +35,8 @@ public:
 	
 	/* Returns true if (x,y) is inside the map and nothing is in that position on either the baseGrid or the gameObjectGrid */
 	bool spaceEmpty(int x, int y);
+	int getBaseGridValue(int x, int y);
+	std::shared_ptr<GameObject> getGameObjectGridValue(int x, int y);
 
 	void addGameObject(int x, int y, GameObject& gameObject);
 private:

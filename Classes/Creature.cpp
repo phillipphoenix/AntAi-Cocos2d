@@ -21,7 +21,7 @@ Creature::Creature(int teamId, cocos2d::Color3B teamColour, Agent* agent, cocos2
 {
 	this->teamId = teamId;
 	this->colour = teamColour;
-	this->agent = *agent;
+	this->agent = agent;
 	this->pos = pos;
 }
 
@@ -31,7 +31,7 @@ void Creature::setPosition(cocos2d::Point pos)
 }
 
 AgentAction Creature::step() {
-	return agent.step(hp, pos, map, currentItem, lastAction);
+	return agent->step(hp, pos, map, currentItem, lastAction);
 }
 
 AgentAction Creature::getLastAction() {

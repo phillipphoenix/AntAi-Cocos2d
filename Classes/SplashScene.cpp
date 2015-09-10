@@ -42,7 +42,7 @@ bool SplashScene::init()
 	// Schedule scene transition after load
 	//this->scheduleOnce(schedule_selector(SplashScene::goToMenuScene), SPLASH_SCENE_DELAY);
 	//DEBUGGING
-	this->scheduleOnce(schedule_selector(SplashScene::goToMenuScene), 0);
+	this->scheduleOnce(schedule_selector(SplashScene::goToMenuScene), 3);
     
     return true;
 }
