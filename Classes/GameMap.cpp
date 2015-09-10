@@ -82,17 +82,21 @@ void GameMap::step()
 
 			if (currentTile_x >= baseGrid.size() || currentTile_y >= baseGrid[currentTile_x].size()) {
 				tileMap[x][y]->setVisible(false);
-			} else if (baseGrid[currentTile_x][currentTile_y] == TileType::empty) {
+			} else if (baseGrid[currentTile_x][currentTile_y] == TileType::stone) {
 				tileMap[x][y]->setVisible(true);
-				tileMap[x][y]->setColor(emptyColour);
+				tileMap[x][y]->setColor(stoneColour);
 			}
 			else if (baseGrid[currentTile_x][currentTile_y] == TileType::dirt) {
 				tileMap[x][y]->setVisible(true);
 				tileMap[x][y]->setColor(dirtColour);
 			}
-			else { // stone
+			else if (gameObjectGrid[currentTile_x][currentTile_y] == nullptr) { // empty
 				tileMap[x][y]->setVisible(true);
-				tileMap[x][y]->setColor(stoneColour);
+				tileMap[x][y]->setColor(emptyColour);
+			}
+			else { // Game Object present
+				tileMap[x][y]->setVisible(true);
+				tileMap[x][y]->setColor(gameObjectGrid[currentTile_x][currentTile_y]->getColour());
 			}
 
 			++currentTile_y;

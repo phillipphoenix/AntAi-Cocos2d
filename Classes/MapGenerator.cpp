@@ -65,7 +65,7 @@ std::vector<std::vector<GameObject*>> MapGenerator::placeGameObjects(std::vector
 		// Reserve memory for each column
 		objectGrid[x].resize(height);
 		for (int y = 0; y < height; ++y) {
-			objectGrid[x][y] = NULL;
+			objectGrid[x][y] = nullptr;
 		}
 	}
 
@@ -74,10 +74,10 @@ std::vector<std::vector<GameObject*>> MapGenerator::placeGameObjects(std::vector
 		// Get random empty tile
 		auto pos = findEmptyTile(baseMap);
 		// Create and place spawn point
-		auto newSpawnPoint = SpawnPoint(teams[i].getId(), teams[i].getColour(), "ant", "antAgent");
+		auto newSpawnPoint = SpawnPoint(teams[i].getId(), teams[i].getColour(), pos, "ant", "antAgent");
 		objectGrid[pos.x][pos.y] = &newSpawnPoint;
 		// Add to the team's spawnPoint list
-
+		teams[i].addSpawnPoint(newSpawnPoint);
 		// Turn surrounding tiles into empty tiles
 		for (int x = pos.x - 1; x < pos.x + 1; ++x) {
 			for (int y = pos.y - 1; y < pos.y + 1; ++y) {

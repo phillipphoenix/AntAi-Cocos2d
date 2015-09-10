@@ -30,10 +30,12 @@ bool GameScene::init()
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	
+	// Create teams
+	teams.resize(2);
+	teams[0] = Team();
+	teams[1] = Team();
 	// Create map
 	MapGenerator gen = MapGenerator(75, 35, 1);
-	auto teams = std::vector<Team>();
 	map = GameMap(100, 100, teams, gen, this);
 
 	// Schedule update function
