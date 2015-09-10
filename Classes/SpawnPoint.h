@@ -26,6 +26,7 @@ public:
 	SpawnPoint(int teamId, cocos2d::Color3B teamColour, cocos2d::Point pos, std::string creatureType, std::string agentType);
     void step(std::vector<Creature>* teamCreatureList, GameMap& map); // Give the creature list, so it can be updated with a new creature.
 	cocos2d::Point getPos();
+	cocos2d::Color3B getColour();
 private:
 	int teamId;
 	std::string creatureType;

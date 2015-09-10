@@ -6,7 +6,6 @@
 
 
 #include "GameMap.h"
-#include "Team.h"
 
 /**
  * GameMap implementation
@@ -22,8 +21,6 @@ GameMap::GameMap(int width, int height, std::vector<Team>& teams, MapGenerator& 
 	baseGrid = gen.generateBaseMap(width, height);
 	// Generate game object grid
 	gameObjectGrid = gen.placeGameObjects(baseGrid, teams);
-	// Save reference to teams
-	this->teams = teams;
 	// Initialise first visible tile coordinates
 	firstVisibleTile_x = 0;
 	firstVisibleTile_y = 0;
@@ -125,10 +122,10 @@ bool GameMap::spaceEmpty(int x, int y)
 	return x >= 0 && x < baseGrid.size() && y >= 0 && y < baseGrid[0].size() && baseGrid[x][y] == 0 && gameObjectGrid[x][y] == NULL;
 }
 
-void GameMap::addGameObject(int x, int y, GameObject* gameObject)
+void GameMap::addGameObject(int x, int y, GameObject& gameObject)
 {
 	if (spaceEmpty(x, y)) {
-		gameObjectGrid[x][y] = gameObject;
+		gameObjectGrid[x][y] = std::make_shared<GameObject>(gameObject);
 	}
 }
 
@@ -160,28 +157,28 @@ void GameMap::executeAction(Creature* creature, AgentAction action)
 		if (spaceEmpty(pos.x - 1, pos.y)) {
 			creature->setPosition(cocos2d::Point(pos.x - 1, pos.y));
 			gameObjectGrid[pos.x][pos.y] = nullptr;
-			gameObjectGrid[pos.x-1][pos.y] = creature;
+			gameObjectGrid[pos.x-1][pos.y] = std::make_shared<GameObject>(*creature);
 		}
 		break;
 	case MOVE_UP:
 		if (spaceEmpty(pos.x, pos.y + 1)) {
 			creature->setPosition(cocos2d::Point(pos.x, pos.y + 1));
 			gameObjectGrid[pos.x][pos.y] = nullptr;
-			gameObjectGrid[pos.x][pos.y + 1] = creature;
+			gameObjectGrid[pos.x][pos.y + 1] = std::make_shared<GameObject>(*creature);
 		}
 		break;
 	case MOVE_RIGHT:
 		if (spaceEmpty(pos.x + 1, pos.y)) {
 			creature->setPosition(cocos2d::Point(pos.x + 1, pos.y));
 			gameObjectGrid[pos.x][pos.y] = nullptr;
-			gameObjectGrid[pos.x + 1][pos.y] = creature;
+			gameObjectGrid[pos.x + 1][pos.y] = std::make_shared<GameObject>(*creature);
 		}
 		break;
 	case MOVE_DOWN:
 		if (spaceEmpty(pos.x, pos.y - 1)) {
 			creature->setPosition(cocos2d::Point(pos.x, pos.y - 1));
 			gameObjectGrid[pos.x][pos.y] = nullptr;
-			gameObjectGrid[pos.x][pos.y - 1] = creature;
+			gameObjectGrid[pos.x][pos.y - 1] = std::make_shared<GameObject>(*creature);
 		}
 		break;
 	case DIG_LEFT:

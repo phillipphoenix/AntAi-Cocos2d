@@ -20,6 +20,9 @@ std::vector<std::vector<TileType>> MapGenerator::generateBaseMap(int width, int 
 {
 	auto baseGrid = std::vector<std::vector<TileType>>();
 
+	// Initialise random seed
+	srand(time(NULL));
+
 	// Reserve memory
 	baseGrid.resize(width);
 	for (int x = 0; x < width; ++x) {
@@ -52,9 +55,9 @@ std::vector<std::vector<TileType>> MapGenerator::generateBaseMap(int width, int 
 	return baseGrid;
 }
 
-std::vector<std::vector<GameObject*>> MapGenerator::placeGameObjects(std::vector<std::vector<TileType>>& baseMap, std::vector<Team> teams)
+std::vector<std::vector<std::shared_ptr<GameObject>>> MapGenerator::placeGameObjects(std::vector<std::vector<TileType>>& baseMap, std::vector<Team>& teams)
 {
-	auto objectGrid = std::vector<std::vector<GameObject*>>();
+	auto objectGrid = std::vector<std::vector<std::shared_ptr<GameObject>>>();
 
 	int width = baseMap.size();
 	int height = baseMap[0].size();
@@ -75,12 +78,12 @@ std::vector<std::vector<GameObject*>> MapGenerator::placeGameObjects(std::vector
 		auto pos = findEmptyTile(baseMap);
 		// Create and place spawn point
 		auto newSpawnPoint = SpawnPoint(teams[i].getId(), teams[i].getColour(), pos, "ant", "antAgent");
-		objectGrid[pos.x][pos.y] = &newSpawnPoint;
+		objectGrid[pos.x][pos.y] = std::make_shared<GameObject>(newSpawnPoint);
 		// Add to the team's spawnPoint list
 		teams[i].addSpawnPoint(newSpawnPoint);
 		// Turn surrounding tiles into empty tiles
-		for (int x = pos.x - 1; x < pos.x + 1; ++x) {
-			for (int y = pos.y - 1; y < pos.y + 1; ++y) {
+		for (int x = pos.x - 1; x <= pos.x + 1; ++x) {
+			for (int y = pos.y - 1; y <= pos.y + 1; ++y) {
 				baseMap[x][y] = TileType::empty;
 			}
 		}

@@ -31,9 +31,8 @@ bool GameScene::init()
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
 	// Create teams
-	teams.resize(2);
-	teams[0] = Team();
-	teams[1] = Team();
+	teams.push_back(Team(1, cocos2d::Color3B::RED, "ant", "antAgent"));
+	teams.push_back(Team(2, cocos2d::Color3B::BLUE, "ant", "antAgent"));
 	// Create map
 	MapGenerator gen = MapGenerator(75, 35, 1);
 	map = GameMap(100, 100, teams, gen, this);
@@ -87,7 +86,7 @@ void GameScene::update(float dt)
 	for (std::vector<Team>::iterator itTeam = teams.begin(); itTeam < teams.end(); itTeam++) {
 		// Spawn points.
 		for (std::vector<SpawnPoint>::iterator itSpawnPoint = itTeam->getSpawnPointIteratorBegin(); itSpawnPoint < itTeam->getSpawnPointIteratorEnd(); itSpawnPoint++) {
-			itSpawnPoint->step(itTeam->getCreatures(), map);
+			//itSpawnPoint->step(itTeam->getCreatures(), map);
 		}
 		// Creatures.
 		for (std::vector<Creature>::iterator itCreature = itTeam->getCreatureIteratorBegin(); itCreature < itTeam->getCreatureIteratorEnd(); itCreature++) {

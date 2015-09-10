@@ -11,6 +11,7 @@
 class GameObject;
 
 #include <vector>
+#include <time.h>
 #include "Team.h"
 #include "TileType.h"
 
@@ -25,7 +26,7 @@ public:
 	* @param baseMap
 	* @param teams
 	*/
-	std::vector<std::vector<GameObject*>> placeGameObjects(std::vector<std::vector<TileType>>& baseMap, std::vector<Team> teams);
+	std::vector<std::vector<std::shared_ptr<GameObject>>> placeGameObjects(std::vector<std::vector<TileType>>& baseMap, std::vector<Team>& teams);
 private:
 	int stoneThreshold;
 	int dirtThreshold;

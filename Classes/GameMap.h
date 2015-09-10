@@ -36,7 +36,7 @@ public:
 	/* Returns true if (x,y) is inside the map and nothing is in that position on either the baseGrid or the gameObjectGrid */
 	bool spaceEmpty(int x, int y);
 
-	void addGameObject(int x, int y, GameObject* gameObject);
+	void addGameObject(int x, int y, GameObject& gameObject);
 private:
 	// Size of the tile sprite in points
 	float tileWidth;
@@ -48,11 +48,10 @@ private:
 
 	// Map generator
 	MapGenerator gen;
-	// Teams
-	std::vector<Team> teams;
+
 	// Grids containing the layout of the map
 	std::vector<std::vector<TileType>> baseGrid;
-	std::vector<std::vector<GameObject*>> gameObjectGrid;
+	std::vector<std::vector<std::shared_ptr<GameObject>>> gameObjectGrid;
 	// Sprite grid used to display the map
 	std::vector<std::vector<cocos2d::Sprite*>> tileMap;
 

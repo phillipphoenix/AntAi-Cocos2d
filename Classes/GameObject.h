@@ -11,8 +11,7 @@
 #include "cocos2d.h"
 
 class GameObject {
-public: 
-    
+public:    
     cocos2d::Color3B getColour();
 protected:
 	cocos2d::Color3B colour;
