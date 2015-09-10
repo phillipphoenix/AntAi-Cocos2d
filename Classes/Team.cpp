@@ -11,7 +11,19 @@
  * Team implementation
  */
 
-	 int Team::getId()
+Team::Team()
+{
+}
+
+Team::Team(int id, cocos2d::Color3B teamColour, std::string creatureType, std::string agentType)
+{
+	this->id = id;
+	this->colour = teamColour;
+	this->creatureType = creatureType;
+	this->agentType = agentType;
+}
+
+int Team::getId()
 	 {
 		 return id;
 	 }
