@@ -10,7 +10,7 @@
 
 AgentAction AntAgent::step(int hp, cocos2d::Point pos, CreatureMap creatureGameMap, std::string currentItem, AgentAction lastAction)
 {
-	int moveActionInt = rand() % 8;
+	int moveActionInt = rand() % 9;
 	switch (moveActionInt)
 	{
 	case 0:
